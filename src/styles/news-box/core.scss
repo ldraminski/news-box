@@ -1,0 +1,102 @@
+
+.news-box {
+    width: 300px;
+    margin: 0px auto;
+
+    $block: &;
+
+    &__header {
+        width: 100%;
+        display: flex;
+    }
+
+    &__label {
+        width: 50%;
+        border-bottom: solid 2px #efefef;
+        font: 400 18px/43px $fontMain;
+        text-align: center;
+        color: #999;
+        cursor: pointer;
+    }
+
+    &__label--active {
+        border-bottom-color: #506e91;
+        font-weight: 700;
+        color: #506e91;
+    }
+
+    &__list {
+        height: 0px;
+        padding: 0px;
+        list-style: none;
+        overflow: hidden;
+
+        @include crossBrowser(transform, scaleX(0));
+        @include crossBrowser(transition, 0.2s);
+    }
+
+    &__list--active {
+        height: auto;
+
+        @include crossBrowser(transform, scaleX(1));
+    }
+
+    &__list--popular {
+
+        @include crossBrowser(transform-origin, left 50%);
+    }
+
+    &__list--newest {
+
+        @include crossBrowser(transform-origin, right 50%);
+    }
+
+    &__item {
+
+        #{$block}__list--popular & {
+            margin-bottom: 30px;
+        }
+
+        #{$block}__list--newest & {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__link, &__link:hover {
+        flex-direction: row;
+        text-decoration: none;
+        color: #222;
+
+        #{$block}__list--popular & {
+            display: flex;
+        }
+    }
+
+    &__time {
+        font: 600 15px/22px $fontMain;
+        color: #ff0001;
+    }
+
+    &__item-title {
+        width: calc(100% - 105px);
+        font: 400 15px/21px $fontMain;
+        text-align: left;
+
+        #{$block}__list--popular & {
+            display: inline-block;
+        }
+
+        #{$block}__list--newest & {
+            display: inline;
+        }
+    }
+
+    &__item-container-photo {
+        width: 90px;
+        margin-left: 15px;
+    }
+
+    &__item-photo {
+        width: 100%;
+    }
+}
