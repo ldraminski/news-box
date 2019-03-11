@@ -1,10 +1,10 @@
 # news-box
 Simple news box module describe to BEM
 
-Develop
+Develop:
 npm start
 
-Prod
+Prod:
 npm run build
 
 Demo
