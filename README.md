@@ -8,4 +8,4 @@ Prod:
 npm run build
 
 Demo
-https://pedantic-aryabhata-a5b840.netlify.com/
+https://news-box.netlify.com/
